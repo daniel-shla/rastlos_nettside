@@ -12,18 +12,18 @@ export default function Home() {
   const router = useRouter();
   const { isDark, isLight, getThemedImage } = useTheme();
   const adventureImages = [
-    "public/random1.jpg", // Replace with your image filenames in public/adventures
-    "public/random2.jpg",
-    "public/random3.jpg",
-    "public/random4.jpg",
-    "public/random5.jpg",
-    "public/random6.jpg",
-    "public/random7.jpg",
-    "public/random8.jpg",
-    "public/random9.jpg",
-    "public/random10.jpg",
-    "public/random11.jpg",
-    "public/random12.jpg",
+    "public/adventures/random1.jpg", 
+    "public/adventures/random2.jpg",
+    "public/adventures/random3.jpg",
+    "public/adventures/random4.jpg",
+    "public/adventures/random5.jpg",
+    "public/adventures/random6.jpg",
+    "public/adventures/random7.jpg",
+    "public/adventures/random8.jpg",
+    "public/adventures/random9.jpg",
+    "public/adventures/random10.jpg",
+    "public/adventures/random11.jpg",
+    "public/adventures/random12.jpg",
   ];
 
   useEffect(() => {
