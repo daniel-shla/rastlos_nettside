@@ -17,9 +17,8 @@ const AboutPage = () => {
     { src: "public/omoss.png", alt: "Sosial samling", caption: "Sosial samling" },
   ];
 
-  // Sample adventure images - replace with actual images
   const adventureImages = [
-    "public/random1.jpg", // Replace with your image filenames in public/adventures
+    "public/random1.jpg", 
     "public/random2.jpg",
     "public/random3.jpg",
     "public/random4.jpg",
@@ -59,7 +58,7 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2">
             <Image 
-              src="./omoss.png" 
+              src="public/omoss.png" 
               alt="About Us" 
               width={600} 
               height={400} 
