@@ -18,18 +18,18 @@ const AboutPage = () => {
   ];
 
   const adventureImages = [
-    "public/adventures/random1.jpg", 
-    "public/adventures/random2.jpg",
-    "public/adventures/random3.jpg",
-    "public/adventures/random4.jpg",
-    "public/adventures/random5.jpg",
-    "public/adventures/random6.jpg",
-    "public/adventures/random7.jpg",
-    "public/adventures/random8.jpg",
-    "public/adventures/random9.jpg",
-    "public/adventures/random10.jpg",
-    "public/adventures/random11.jpg",
-    "public/adventures/random12.jpg",
+    "public/random1.jpg", 
+    "public/random2.jpg",
+    "public/random3.jpg",
+    "public/random4.jpg",
+    "public/random5.jpg",
+    "public/random6.jpg",
+    "public/random7.jpg",
+    "public/random8.jpg",
+    "public/random9.jpg",
+    "public/random10.jpg",
+    "public/random11.jpg",
+    "public/random12.jpg",
   ];
 
   // Sample testimonials
