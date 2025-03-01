@@ -18,18 +18,18 @@ const AboutPage = () => {
   ];
 
   const adventureImages = [
-    "public/random1.jpg", 
-    "public/random2.jpg",
-    "public/random3.jpg",
-    "public/random4.jpg",
-    "public/random5.jpg",
-    "public/random6.jpg",
-    "public/random7.jpg",
-    "public/random8.jpg",
-    "public/random9.jpg",
-    "public/random10.jpg",
-    "public/random11.jpg",
-    "public/random12.jpg",
+    "./random1.jpg", 
+    "./random2.jpg",
+    "./random3.jpg",
+    "./random4.jpg",
+    "./random5.jpg",
+    "./random6.jpg",
+    "./random7.jpg",
+    "./random8.jpg",
+    "./random9.jpg",
+    "./random10.jpg",
+    "./random11.jpg",
+    "./random12.jpg",
   ];
 
   // Sample testimonials
