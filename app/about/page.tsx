@@ -11,26 +11,26 @@ const AboutPage = () => {
   
   // Sample activity images - replace with actual images
   const activityImages = [
-    { src: "/omoss.png", alt: "Klatring", caption: "Klatring" },
-    { src: "/omoss.png", alt: "Fjelltur", caption: "Fjelltur" },
-    { src: "/omoss.png", alt: "Buldring", caption: "Buldring" },
-    { src: "/omoss.png", alt: "Sosial samling", caption: "Sosial samling" },
+    { src: "./omoss.png", alt: "Klatring", caption: "Klatring" },
+    { src: "./omoss.png", alt: "Fjelltur", caption: "Fjelltur" },
+    { src: "./omoss.png", alt: "Buldring", caption: "Buldring" },
+    { src: "./omoss.png", alt: "Sosial samling", caption: "Sosial samling" },
   ];
 
   // Sample adventure images - replace with actual images
   const adventureImages = [
-    "random1.jpg", // Replace with your image filenames in public/adventures
-    "random2.jpg",
-    "random3.jpg",
-    "random4.jpg",
-    "random5.jpg",
-    "random6.jpg",
-    "random7.jpg",
-    "random8.jpg",
-    "random9.jpg",
-    "random10.jpg",
-    "random11.jpg",
-    "random12.jpg",
+    "./random1.jpg", // Replace with your image filenames in public/adventures
+    "./random2.jpg",
+    "./random3.jpg",
+    "./random4.jpg",
+    "./random5.jpg",
+    "./random6.jpg",
+    "./random7.jpg",
+    "./random8.jpg",
+    "./random9.jpg",
+    "./random10.jpg",
+    "./random11.jpg",
+    "./random12.jpg",
   ];
 
   // Sample testimonials
@@ -51,7 +51,7 @@ const AboutPage = () => {
   
   return (
     <PageTemplate
-      title="OM RASTLÖS"
+      title="OM RASTLØS"
       subtitle="Her kan du bli kjent med oss"
     >
       <section className={`about ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
@@ -59,7 +59,7 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2">
             <Image 
-              src="/omoss.png" 
+              src="./omoss.png" 
               alt="About Us" 
               width={600} 
               height={400} 
