@@ -136,7 +136,7 @@ const AboutPage = () => {
                   transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.03] group`}
               >
                 <Image
-                  src={`/adventures/${imageName}`}
+                  src={`./${imageName}`}
                   alt={`Adventure - ${imageName}`}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
