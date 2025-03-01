@@ -13,35 +13,35 @@ export default function Members() {
             name: "MINA WILLIAMS",
             position: "LEDER",
             email: "MINA@RASTLOS.NO",
-            image: "/leder.png" // Replace with actual image paths
+            image: "./leder.png" // Replace with actual image paths
         },
         {
             id: 2,
             name: "DANIEL SHAHZAD-LANDSVERK",
             position: "NESTLEDER",
             email: "DANIEL@RASTLOS.NO",
-            image: "/nestleder.png" // Replace with actual image paths
+            image: "./nestleder.png" // Replace with actual image paths
         },
         {
             id: 3,
             name: "ELINE VEDELER",
             position: "ØKONOMIANSVARLIG",
             email: "ELINE@RASTLOS.NO",
-            image: "/okonomi.png" // Replace with actual image paths
+            image: "./okonomi.png" // Replace with actual image paths
         },
         {
             id: 4,
             name: "KRISTINE B. BRAATHEN",
             position: "PROMOANSLARLIG",
             email: "KRISTINE@RASTLOS.NO",
-            image: "/promo.png" // Replace with actual image paths
+            image: "./promo.png" // Replace with actual image paths
         },
         {
             id: 5,
             name: "LAN ANH TRAN",
             position: "STYREMEDLEM",
             email: "LAN@RASTLOS.NO",
-            image: "/styremedlem.png" // Replace with actual image paths
+            image: "./styremedlem.png" // Replace with actual image paths
         }
     ];
 

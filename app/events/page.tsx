@@ -14,7 +14,7 @@ export default function Events() {
       date: "TIRSDAG 4. FEBRUAR KL. 09.00",
       location: "HOS OSLO KLATRESENTER",
       signupLink: "https://www.example.com/signup1",
-      image: "/buldring.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
+      image: "./buldring.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
       description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
     },
     {
@@ -22,7 +22,7 @@ export default function Events() {
       date: "TIRSDAG 11. FEBRUAR KL. 16.15",
       location: "PÅ SEMINARROM C",
       signupLink: "https://www.example.com/signup2",
-      image: "/genfors.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
+      image: "./genfors.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
       description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
     },
     {
@@ -30,7 +30,7 @@ export default function Events() {
       date: "ONSDAG 19. FEBRUAR KL. 14.00", // Example date
       location: "DRAMMEN KLATRESENTER", // Example location
       signupLink: "https://www.example.com/signup3",
-      image: "/buldring.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
+      image: "./buldring.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
       description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
     },
     {
@@ -38,7 +38,7 @@ export default function Events() {
       date: "FREDAG 14. DESEMBER KL. 19.00", // Example date
       location: "RESTAURANT RASTLOS", // Example location
       signupLink: "https://www.example.com/signup4",
-      image: "/genfors.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
+      image: "./genfors.png", // **REPLACE WITH YOUR ACTUAL IMAGE PATH**
       description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
     },
   ];

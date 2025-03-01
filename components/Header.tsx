@@ -47,7 +47,7 @@ export default function Header() {
       <div className="w-full lg:w-auto flex justify-between items-center">
         <Link href="/" className="mr-4">
           <Image 
-            src={isDark ? "/logo.png" : "/lightlogo.png"} 
+            src={isDark ? "./logo.png" : "./lightlogo.png"} 
             alt="Rastlos Logo" 
             width={275} 
             height={200} 
