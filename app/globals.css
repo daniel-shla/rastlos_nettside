@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #292929;
     --foreground: #ededed;
   }
 }
@@ -17,5 +17,24 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Target specific elements for Berlin Sans FB Demi */
+h1, h2, h3 { 
+  font-family: 'Berlin Sans FB Demi', sans-serif;
+}
+
+/* Global styles or Tailwind overrides */
+.header-content, .news-content, .contact-content, .team-content {
+  @apply max-w-7xl mx-auto;
+}
+
+.hero {
+  @apply bg-[url('/hero_image.jpg')] bg-cover bg-center text-white text-center py-24;
+}
+
+.news h2, .contact h2 {
+  @apply text-3xl font-bold mb-6;
+}
+
+/* ... other custom styles or Tailwind overrides ... */
