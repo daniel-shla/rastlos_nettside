@@ -17,19 +17,35 @@ const AboutPage = () => {
     { src: "/omoss.png", alt: "Sosial samling", caption: "Sosial samling" },
   ];
 
+  // Sample adventure images - replace with actual images
+  const adventureImages = [
+    "random1.jpg", // Replace with your image filenames in public/adventures
+    "random2.jpg",
+    "random3.jpg",
+    "random4.jpg",
+    "random5.jpg",
+    "random6.jpg",
+    "random7.jpg",
+    "random8.jpg",
+    "random9.jpg",
+    "random10.jpg",
+    "random11.jpg",
+    "random12.jpg",
+  ];
+
   // Sample testimonials
   const testimonials = [
     {
       quote: "IFI Rastløs har gitt meg muligheten til å oppleve Oslo på en helt ny måte og møte fantastiske mennesker.",
-      name: "Marte, 2. år Informatikk"
+      name: "Marte, 2. år Design"
     },
     {
       quote: "Jeg hadde aldri prøvd klatring før jeg ble med på en Rastløs-tur. Nå er jeg hekta!",
-      name: "Jonas, 3. år Programmering"
+      name: "Jonas, 3. år PROSA"
     },
     {
       quote: "Det beste med Rastløs er det inkluderende miljøet. Her er det plass til alle.",
-      name: "Sofie, 1. år Informatikk"
+      name: "Sofie, 1. år Robotikk"
     }
   ];
   
@@ -95,28 +111,56 @@ const AboutPage = () => {
           </p>
         </div>
 
-        {/* Activity gallery */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-6 font-anton text-buldreoransj text-center">Våre Aktiviteter</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {activityImages.map((img, index) => (
-              <div key={index} className={`overflow-hidden rounded-lg border ${isDark ? 'border-gray-700' : 'border-gray-200'} shadow-md group`}>
-                <div className="relative h-48">
-                  <Image 
-                    src={img.src} 
-                    alt={img.alt} 
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ 
-                      filter: isLight ? "contrast(1.05) brightness(1.05)" : "none"
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <p className="text-white p-3 font-bold">{img.caption}</p>
-                  </div>
+        {/* Adventure Images Section */}
+        <div className={`mt-8 p-6 rounded-lg shadow-lg
+          ${isDark 
+            ? 'bg-[#333333] border border-gray-700' 
+            : 'bg-[#f7f3e8] border border-[#292929]'}`}>
+          <div className="flex items-center mb-6">
+            <div className="mr-3 text-buldreoransj">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h2 className={`font-anton text-2xl ${isDark ? 'text-buldreoransj' : 'text-buldreoransj'}`}>
+              NYLIGE ARRANGEMENTER
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+            {adventureImages.map((imageName, index) => (
+              <div 
+                key={imageName} 
+                className={`relative rounded-lg overflow-hidden aspect-square 
+                  ${isDark 
+                    ? 'border border-gray-700' 
+                    : 'border border-[#292929]'} 
+                  transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.03] group`}
+              >
+                <Image
+                  src={`/adventures/${imageName}`}
+                  alt={`Adventure - ${imageName}`}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                  style={{ 
+                    objectFit: "cover",
+                    transition: "all 0.3s ease"
+                  }}
+                  className="group-hover:brightness-110"
+                  quality={85}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p className="text-white p-3 font-bold font-anton"> </p>
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-6 flex justify-center">
+            <Link 
+              href="/events" 
+              className={`inline-block px-6 py-3 bg-buldreoransj text-white font-bold rounded-lg hover:bg-[#d35400] transition-colors duration-300 shadow-md font-anton`}
+            >
+              SE ALLE ARRANGEMENTER
+            </Link>
           </div>
         </div>
 
