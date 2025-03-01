@@ -1,7 +1,13 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import PageTemplate from '@/components/PageTemplate';
+import { useTheme } from '@/components/ThemeContext';
 
-export default function Intern() {
+export default function Merch() {
+  const { isDark, isLight } = useTheme();
+  
   const merchItems = [
     {
       name: "FLEECEVEST SVART",
@@ -78,11 +84,19 @@ export default function Intern() {
   ];
 
   return (
-    <div className="bg-[#292929] text-white py-12 px-6 font-anton">
-      <h2 className="text-5xl text-rastrød font-bold text-center mb-8">MERCH</h2>
+    <PageTemplate
+      title="RASTLOS MERCH"
+      subtitle="Rep Rastløs-gjengen med vår offisielle merch"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {merchItems.map((item, index) => (
-          <div key={index} className="relative rounded-lg p-6 flex flex-col h-full border border-white">
+          <div 
+            key={index} 
+            className={`relative rounded-lg p-6 flex flex-col h-full transition-all duration-300
+              ${isDark 
+                ? 'bg-[#333333] border border-gray-700 shadow-md' 
+                : 'bg-[#f7f3e8] border border-[#e9e5d9] shadow-sm'}`}
+          >
             <div className="relative h-[34rem] mb-4 overflow-hidden rounded-t-lg">
               {item.images.map((imagePath, imageIndex) => {
                 let width = "100%";
@@ -103,23 +117,42 @@ export default function Intern() {
                 }
 
                 return (
-                  <div key={imageIndex} className={`absolute inset-0 overflow-hidden ${imageIndex === 1 ? 'opacity-70' : ''} ${imageIndex === 2 ? 'z-10' : ''}`} style={{ width, height, left, top }}>
+                  <div 
+                    key={imageIndex} 
+                    className={`absolute inset-0 overflow-hidden 
+                      ${imageIndex === 1 ? 'opacity-70' : ''} 
+                      ${imageIndex === 2 ? 'z-10' : ''}`
+                    } 
+                    style={{ width, height, left, top }}
+                  >
                     <Image
                       src={imagePath}
                       alt={`${item.name} - Layer ${imageIndex + 1}`}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{ 
+                        objectFit: "cover",
+                        filter: isLight && imageIndex === 2 ? "contrast(1.05) brightness(1.05)" : "none"
+                      }}
                       quality={100}
                     />
                   </div>
                 );
               })}
             </div>
-            <h3 className="text-2xl font-bold mb-2">{item.name}</h3>
-            <p className="mb-4">{item.price}</p>
+            <h3 className={`text-2xl font-bold mb-2 font-anton ${isDark ? 'text-white' : 'text-[#292929]'}`}>
+              {item.name}
+            </h3>
+            <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+              {item.price}
+            </p>
+            <button 
+              className="mt-auto py-2 px-4 bg-buldreoransj hover:bg-[#ff9a5a] text-white font-bold rounded transition-colors"
+            >
+              KJØP NÅ
+            </button>
           </div>
         ))}
       </div>
-    </div>
+    </PageTemplate>
   );
 }

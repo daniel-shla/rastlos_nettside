@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import React from 'react';
 import Shortcuts from '@/components/Shortcuts'; // Import the wrapper
+import { ThemeProvider } from "@/components/ThemeContext";
 
 
 const geistSans = Geist({
@@ -35,10 +36,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} antialiased min-h-dvh flex flex-col`}
       >
-        <Header />
-        <Shortcuts /> {/* Shortcuts bar here */}
-        <div className="flex-1">{children}</div>
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          <Shortcuts /> {/* Shortcuts bar here */}
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -3,20 +3,124 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 41, 41, 41;
+  --background-end-rgb: 41, 41, 41;
+  --buldreoransj: #F4A261;
+  --header-text: #FFFFFF;
+  --background: #292929;
+  --card-bg: #333333;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --cream-border: #fef6da;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #292929;
-    --foreground: #ededed;
-  }
+.light-mode {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 253, 244;
+  --background-end-rgb: 255, 253, 244;
+  --header-text: #000000;
+  --background: #fffdf4;
+  --card-bg: #f7f3e8;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --cream-border: #292929;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme transition effects */
+header, 
+main, 
+footer, 
+button, 
+a, 
+div {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Improved hover effects for light mode */
+.light-mode a:hover {
+  color: var(--buldreoransj);
+}
+
+/* Card styling */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px var(--shadow-color);
+}
+
+/* Button styling */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--buldreoransj);
+  color: white;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-outline {
+  border: 2px solid var(--buldreoransj);
+  color: var(--buldreoransj);
+}
+
+.btn-outline:hover {
+  background-color: var(--buldreoransj);
+  color: white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-header-text {
+    color: var(--header-text);
+  }
+  
+  .text-buldreoransj {
+    color: var(--buldreoransj);
+  }
+  
+  .bg-background {
+    background-color: var(--background);
+  }
+  
+  .bg-card {
+    background-color: var(--card-bg);
+  }
+
+  .border-theme {
+    border-color: var(--border-color);
+  }
+  
+  .border-cream {
+    border-color: var(--cream-border);
+  }
+}
+
+/* Font Anton */
+.font-anton {
+  font-family: var(--font-anton);
 }
 
 /* Target specific elements for Berlin Sans FB Demi */

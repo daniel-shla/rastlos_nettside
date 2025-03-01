@@ -1,7 +1,13 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import PageTemplate from '@/components/PageTemplate';
+import { useTheme } from '@/components/ThemeContext';
 
 export default function Events() {
+  const { isDark, isLight } = useTheme();
+  
   const events = [
     {
       title: "BULDRING MED RASTLOS",
@@ -38,23 +44,51 @@ export default function Events() {
   ];
 
   return (
-    <div className="bg-[#292929] text-white py-12 px-6 font-anton">
-      <h2 className="text-5xl text-rastrød font-bold text-center mb-8">KOMMENDE ARRANGEMENTER</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-24">
+    <PageTemplate
+      title="KOMMENDE ARRANGEMENTER"
+      subtitle="Meld deg på våre spennende aktiviteter"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-24">
         {events.map((event, index) => (
-          <div key={index} className="bg-[#292929] rounded-lg p-6 flex flex-col h-full border border-white">
+          <div 
+            key={index} 
+            className={`rounded-lg p-6 flex flex-col h-full transition-all duration-300
+              ${isDark 
+                ? 'bg-[#333333] border border-gray-700 shadow-md' 
+                : 'bg-[#f7f3e8] border border-[#e9e5d9] shadow-sm'}`}
+          >
             <div className="relative h-[26rem] mb-4 overflow-hidden rounded-t-lg">
-              <Image src={event.image} alt={event.title} layout="fill" objectFit="cover" quality={100} />
+              <Image 
+                src={event.image} 
+                alt={event.title} 
+                fill 
+                style={{ 
+                  objectFit: "cover",
+                  filter: isLight ? "contrast(1.05) brightness(1.05)" : "none"
+                }} 
+                quality={100} 
+              />
             </div>
-            <h3 className="text-2xl font-bold mb-2">{event.title}</h3>
-            <p className="mb-6">{event.description}</p>
+            <h3 className={`text-2xl font-bold mb-2 font-anton ${isDark ? 'text-white' : 'text-[#292929]'}`}>
+              {event.title}
+            </h3>
+            <p className={`mb-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+              {event.description}
+            </p>
   
             <div className="mt-auto">
-              <div className="grid grid-cols-3 gap-0 py-2"> {/* Removed border and pt here */}
-                <div className="text-left border-t border-white pt-4">{event.location}</div> {/* Added border-t and pt-4 here */}
-                <div className="text-center border-t border-white pt-4">{event.date}</div> {/* Added border-t and pt-4 here */}
-                <div className="text-right pr-4 border-t border-white pt-4"> {/* Added border-t and pt-4 here */}
-                  <a href={event.signupLink} className="bg-rastrød hover:bg-rastrød text-darkgrey font-bold py-2 px-4 rounded">
+              <div className={`grid grid-cols-3 gap-0 py-2 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+                <div className={`text-left pt-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                  {event.location}
+                </div>
+                <div className={`text-center pt-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                  {event.date}
+                </div>
+                <div className="text-right pr-4 pt-4">
+                  <a 
+                    href={event.signupLink} 
+                    className="bg-buldreoransj hover:bg-[#ff9a5a] text-white font-bold py-2 px-4 rounded transition-colors"
+                  >
                     PÅMELDING HER
                   </a>
                 </div>
@@ -63,6 +97,6 @@ export default function Events() {
           </div>
         ))}
       </div>
-    </div>
+    </PageTemplate>
   );
 }

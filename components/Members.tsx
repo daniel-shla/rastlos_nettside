@@ -1,7 +1,12 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { useTheme } from './ThemeContext';
 
 export default function Members() {
+    const { isDark, isLight } = useTheme();
+    
     const members = [
         {
             id: 1,
@@ -41,24 +46,32 @@ export default function Members() {
     ];
 
     return (
-        <div className="flex gap-4 font-anton">
-          {members.map((m) => (
-            <div key={m.id} className="text-center flex flex-col items-center">
-              <div className="rounded-full w-20 h-20 bg-gray-300 mb-2 overflow-hidden relative">
-                <Image
-                  src={m.image || "/path/to/placeholder.png"}
-                  alt={`${m.name} profile`}
-                  layout="fill" // Use fill to make the image fill its parent
-                  objectFit="cover" // Use cover to make the image cover the entire circle
-                  // Remove width and height here!
-                  quality={100} // Add quality prop
-                />
-              </div>
-              <p>{m.position}</p>
-              <p>{m.name}</p>
-              <p>{m.email}</p>
+        <div>
+            <h3 className={`font-bold text-lg mb-4 font-anton text-center ${isDark ? 'text-gray-300' : 'text-[#292929]'}`}>
+                STYRET
+            </h3>
+            <div className="flex flex-wrap gap-4 justify-center font-anton">
+                {members.map((m) => (
+                    <div key={m.id} className={`text-center flex flex-col items-center ${isDark ? 'text-gray-300' : 'text-[#292929]'}`}>
+                        <div className={`rounded-full w-12 h-12 md:w-16 md:h-16 mb-2 overflow-hidden relative 
+                            ${isDark ? 'border border-gray-700' : 'border-2 border-[#292929]'} 
+                            transition-transform hover:scale-110 duration-200`}>
+                            <Image
+                                src={m.image || "/path/to/placeholder.png"}
+                                alt={`${m.name} profile`}
+                                fill
+                                style={{ 
+                                    objectFit: "cover",
+                                    filter: isLight ? "contrast(1.05) brightness(1.05)" : "none"
+                                }}
+                                quality={100}
+                            />
+                        </div>
+                        <p className="text-xs font-bold text-buldreoransj">{m.position}</p>
+                        <p className="text-xs">{m.name.split(' ')[0]}</p>
+                    </div>
+                ))}
             </div>
-          ))}
         </div>
-      );
+    );
 }
