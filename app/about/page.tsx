@@ -11,10 +11,10 @@ const AboutPage = () => {
   
   // Sample activity images - replace with actual images
   const activityImages = [
-    { src: "public/omoss.png", alt: "Klatring", caption: "Klatring" },
-    { src: "public/omoss.png", alt: "Fjelltur", caption: "Fjelltur" },
-    { src: "public/omoss.png", alt: "Buldring", caption: "Buldring" },
-    { src: "public/omoss.png", alt: "Sosial samling", caption: "Sosial samling" },
+    { src: "./omoss.png", alt: "Klatring", caption: "Klatring" },
+    { src: "./omoss.png", alt: "Fjelltur", caption: "Fjelltur" },
+    { src: "./omoss.png", alt: "Buldring", caption: "Buldring" },
+    { src: "./omoss.png", alt: "Sosial samling", caption: "Sosial samling" },
   ];
 
   const adventureImages = [
