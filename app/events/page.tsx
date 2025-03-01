@@ -69,29 +69,27 @@ export default function Events() {
                 quality={100} 
               />
             </div>
-            <h3 className={`text-2xl font-bold mb-2 font-anton ${isDark ? 'text-white' : 'text-[#292929]'}`}>
+            <h3 className={`text-2xl font-bold mb-2 font-anton ${isDark ? 'text-[#fef6da]' : 'text-[#292929]'}`}>
               {event.title}
             </h3>
             <p className={`mb-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               {event.description}
             </p>
   
-            <div className="mt-auto">
-              <div className={`grid grid-cols-3 gap-0 py-2 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
-                <div className={`text-left pt-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  {event.location}
-                </div>
-                <div className={`text-center pt-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  {event.date}
-                </div>
-                <div className="text-right pr-4 pt-4">
-                  <a 
-                    href={event.signupLink} 
-                    className="bg-buldreoransj hover:bg-[#ff9a5a] text-white font-bold py-2 px-4 rounded transition-colors"
-                  >
-                    PÅMELDING HER
-                  </a>
-                </div>
+            <div className="flex justify-between items-center py-2 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}">
+              <div className={`text-left ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                {event.location}
+              </div>
+              <div className={`text-center ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                {event.date}
+              </div>
+              <div className="text-right">
+                <a 
+                  href={event.signupLink} 
+                  className="bg-buldreoransj hover:bg-[#ff9a5a] text-[#fef6da] font-bold py-2 px-6 rounded transition-colors inline-block text-center"
+                >
+                  PÅMELDING HER
+                </a>
               </div>
             </div>
           </div>

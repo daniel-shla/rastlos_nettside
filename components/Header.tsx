@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <header className={`p-4 flex flex-col lg:flex-row justify-between items-center 
       ${isDark 
-        ? 'border-b border-[#fef6da] bg-[#292929] text-white' 
+        ? 'border-b border-[#fef6da] bg-[#292929] text-[#fef6da]' 
         : 'border-b border-[#292929] bg-[#fffdf4] text-[#292929]'} relative`}>
       <div className="w-full lg:w-auto flex justify-between items-center">
         <Link href="/" className="mr-4">
@@ -77,10 +77,9 @@ export default function Header() {
       {/* Navigation for desktop and mobile */}
       <div className={`${isMenuOpen || !isMobile ? 'flex' : 'hidden'} flex-col lg:flex-row w-full lg:w-auto mt-4 lg:mt-0 lg:items-center`}>
         <nav className="flex flex-col lg:flex-row gap-4 mb-4 lg:mb-0">
-          <Link href="/siifra" className={`hover:text-buldreoransj font-anton ${isDark ? 'text-white' : 'text-[#292929]'} text-xl py-2 lg:py-0 transition-colors`}>SI IFRA</Link>
-          <Link href="/privacy" className={`hover:text-buldreoransj font-anton ${isDark ? 'text-white' : 'text-[#292929]'} text-xl py-2 lg:py-0 transition-colors`}>PERSONVERNSERKLÆRING</Link>
-          <Link href="/tilbakemelding" className={`hover:text-buldreoransj font-anton ${isDark ? 'text-white' : 'text-[#292929]'} text-xl py-2 lg:py-0 transition-colors`}>TILBAKEMELDING</Link>
-          <Link href="/merch" className={`hover:text-buldreoransj font-anton ${isDark ? 'text-white' : 'text-[#292929]'} text-xl py-2 lg:py-0 transition-colors`}>MERCH</Link>
+          <Link href="/siifra" className={`hover:text-buldreoransj font-anton ${isDark ? 'text-[#fef6da]' : 'text-[#292929]'} text-xl py-2 lg:py-0 transition-colors`}>SI IFRA</Link>
+          <Link href="/tilbakemelding" className={`hover:text-buldreoransj font-anton ${isDark ? 'text-[#fef6da]' : 'text-[#292929]'} text-xl py-2 lg:py-0 transition-colors`}>TILBAKEMELDING</Link>
+          <Link href="/merch" className={`hover:text-buldreoransj font-anton ${isDark ? 'text-[#fef6da]' : 'text-[#292929]'} text-xl py-2 lg:py-0 transition-colors`}>MERCH</Link>
         </nav>
         
         <div className="flex items-center ml-4">

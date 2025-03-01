@@ -149,7 +149,7 @@ const AboutPage = () => {
                   quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <p className="text-white p-3 font-bold font-anton"> </p>
+                  <p className="text-[#fef6da] p-3 font-bold font-anton"> </p>
                 </div>
               </div>
             ))}
@@ -157,7 +157,7 @@ const AboutPage = () => {
           <div className="mt-6 flex justify-center">
             <Link 
               href="/events" 
-              className={`inline-block px-6 py-3 bg-buldreoransj text-white font-bold rounded-lg hover:bg-[#d35400] transition-colors duration-300 shadow-md font-anton`}
+              className={`inline-block px-6 py-3 bg-buldreoransj text-[#fef6da] font-bold rounded-lg hover:bg-[#d35400] transition-colors duration-300 shadow-md font-anton`}
             >
               SE ALLE ARRANGEMENTER
             </Link>
@@ -211,7 +211,7 @@ const AboutPage = () => {
 
         {/* Testimonials section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-8 font-anton text-buldreoransj text-center">Hva sier medlemmene våre</h2>
+          <h2 className="text-2xl font-bold mb-8 font-anton text-buldreoransj text-center">Hva sier studentene?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <div key={index} className={`p-6 rounded-lg ${isDark ? 'bg-[#333333]' : 'bg-[#f7f3e8]'} shadow-md relative`}>
@@ -232,7 +232,7 @@ const AboutPage = () => {
             <p className={`text-lg mb-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Har du lyst til å bli med på en av våre aktiviteter? Sjekk ut kommende arrangementer og bli med på moroa!
             </p>
-            <Link href="/events" className={`inline-block px-6 py-3 bg-buldreoransj text-white font-bold rounded-lg hover:bg-[#d35400] transition-colors duration-300 shadow-md`}>
+            <Link href="/events" className={`inline-block px-6 py-3 bg-buldreoransj text-[#fef6da] font-bold rounded-lg hover:bg-[#d35400] transition-colors duration-300 shadow-md`}>
               Se kommende arrangementer
             </Link>
           </div>
