@@ -58,7 +58,7 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2">
             <Image 
-              src="public/omoss.png" 
+              src="./omoss.png" 
               alt="About Us" 
               width={600} 
               height={400} 
