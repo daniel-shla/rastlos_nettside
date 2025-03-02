@@ -70,7 +70,9 @@ export default function Members() {
                             />
                         </div>
                         <p className="text-xs font-bold text-buldreoransj">{m.position}</p>
-                        <p className="text-xs">{m.name.split(' ')[0]}</p>
+                        <p className="text-xs">
+                            {m.name.includes("LAN ANH") ? "LAN ANH" : m.name.split(' ')[0]}
+                        </p>
                     </div>
                 ))}
             </div>
