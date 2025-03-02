@@ -1,17 +1,14 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import PageTemplate from '@/components/PageTemplate';
 import { useTheme } from '@/components/ThemeContext';
 import Link from 'next/link';
 import ImageWithLazyLoading from '@/components/ImageWithLazyLoading';
-import SwipeHandler from '@/components/SwipeHandler';
 
 const AboutPage = () => {
   const { isDark, isLight } = useTheme();
-  const [currentImagePage, setCurrentImagePage] = useState(0);
-  const imagesPerPage = 8; // Display 8 images per page on mobile
   
   // Sample activity images - replace with actual images
   const activityImages = [
@@ -51,25 +48,6 @@ const AboutPage = () => {
       name: "Sofie, 1. år Robotikk"
     }
   ];
-  
-  // Calculate which images to show based on pagination
-  const displayedImages = adventureImages.slice(
-    currentImagePage * imagesPerPage, 
-    (currentImagePage + 1) * imagesPerPage
-  );
-
-  // Handle swipe navigation for image gallery
-  const handlePrevPage = () => {
-    if (currentImagePage > 0) {
-      setCurrentImagePage(currentImagePage - 1);
-    }
-  };
-
-  const handleNextPage = () => {
-    if ((currentImagePage + 1) * imagesPerPage < adventureImages.length) {
-      setCurrentImagePage(currentImagePage + 1);
-    }
-  };
 
   return (
     <PageTemplate
@@ -134,70 +112,40 @@ const AboutPage = () => {
         </div>
 
         {/* Adventure Images Section */}
-        <div className={`mt-8 p-6 rounded-lg shadow-lg
-          ${isDark 
-            ? 'bg-[#333333] border border-gray-700' 
-            : 'bg-[#f7f3e8] border border-[#292929]'}`}>
-          <div className="flex items-center mb-6">
-            <div className="mr-3 text-buldreoransj">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h2 className={`font-anton text-2xl ${isDark ? 'text-buldreoransj' : 'text-buldreoransj'}`}>
+        <div className="mt-12">
+          <div className="text-center mb-6">
+            <h2 className={`text-2xl font-anton text-buldreoransj inline-block border-b-2 border-buldreoransj pb-1`}>
               NYLIGE ARRANGEMENTER
             </h2>
           </div>
-          <SwipeHandler 
-            onSwipeLeft={handleNextPage} 
-            onSwipeRight={handlePrevPage}
-            className="w-full"
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-              {displayedImages.map((imageName, index) => (
-                <div 
-                  key={imageName} 
-                  className={`relative rounded-lg overflow-hidden aspect-square 
-                    ${isDark 
-                      ? 'border border-gray-700' 
-                      : 'border border-[#292929]'} 
-                    transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.03] group`}
-                >
-                  <ImageWithLazyLoading
-                    src={imageName}
-                    alt={`Adventure - ${imageName}`}
-                    fill
-                    width={300}  
-                    height={300}
-                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
-                    style={{ 
-                      objectFit: "cover",
-                      transition: "all 0.3s ease"
-                    }}
-                    className="group-hover:brightness-110"
-                    quality={85}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <p className="text-[#fef6da] p-3 font-bold font-anton"> </p>
-                  </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+            {adventureImages.map((imageName, index) => (
+              <div 
+                key={imageName} 
+                className={`relative rounded-lg overflow-hidden aspect-square 
+                  ${isDark 
+                    ? 'border border-gray-700' 
+                    : 'border border-[#292929]'} 
+                  transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.03] group`}
+              >
+                <ImageWithLazyLoading
+                  src={imageName}
+                  alt={`Adventure - ${imageName}`}
+                  fill
+                  width={300}  
+                  height={300}
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                  style={{ 
+                    objectFit: "cover",
+                    transition: "all 0.3s ease"
+                  }}
+                  className="group-hover:brightness-110"
+                  quality={85}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p className="text-[#fef6da] p-3 font-bold font-anton"> </p>
                 </div>
-              ))}
-            </div>
-          </SwipeHandler>
-          
-          {/* Page indicators for mobile */}
-          <div className="mt-4 flex justify-center gap-1">
-            {Array.from({ length: Math.ceil(adventureImages.length / imagesPerPage) }).map((_, i) => (
-              <button 
-                key={i}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  i === currentImagePage 
-                    ? 'bg-buldreoransj w-4' 
-                    : isDark ? 'bg-gray-600' : 'bg-gray-300'
-                }`}
-                onClick={() => setCurrentImagePage(i)}
-                aria-label={`Go to page ${i + 1}`}
-              />
+              </div>
             ))}
           </div>
           <div className="mt-6 flex justify-center">

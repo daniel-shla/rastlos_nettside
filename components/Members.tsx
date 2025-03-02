@@ -50,18 +50,18 @@ export default function Members() {
             <h3 className={`font-bold text-lg mb-4 font-anton text-center lg:text-left ${isDark ? 'text-gray-300' : 'text-[#292929]'}`}>
                 STYRET
             </h3>
-            {/* Grid layout that adapts to screen sizes */}
-            <div className="grid grid-cols-5 gap-2 sm:gap-4 max-w-md mx-auto lg:mx-0 font-anton">
+            {/* Flex layout with wrapping - more mobile friendly */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 font-anton">
                 {members.map((m) => (
                     <div key={m.id} className={`text-center flex flex-col items-center ${isDark ? 'text-gray-300' : 'text-[#292929]'}`}>
-                        <div className={`rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mb-1 overflow-hidden relative
+                        <div className={`rounded-full w-14 h-14 md:w-16 md:h-16 mb-2 overflow-hidden relative 
                             ${isDark ? 'border border-gray-700' : 'border-2 border-[#292929]'} 
                             transition-transform hover:scale-110 duration-200`}>
                             <Image
                                 src={m.image || "/path/to/placeholder.png"}
                                 alt={`${m.name} profile`}
                                 fill
-                                sizes="(max-width: 640px) 40px, (max-width: 768px) 48px, 64px"
+                                sizes="(max-width: 640px) 56px, 64px"
                                 style={{ 
                                     objectFit: "cover",
                                     filter: isLight ? "contrast(1.05) brightness(1.05)" : "none"
@@ -69,8 +69,8 @@ export default function Members() {
                                 quality={90}
                             />
                         </div>
-                        <p className="text-[10px] sm:text-xs font-bold text-buldreoransj truncate w-full">{m.position}</p>
-                        <p className="text-[10px] sm:text-xs truncate w-full">{m.name.split(' ')[0]}</p>
+                        <p className="text-xs font-bold text-buldreoransj">{m.position}</p>
+                        <p className="text-xs">{m.name.split(' ')[0]}</p>
                     </div>
                 ))}
             </div>
