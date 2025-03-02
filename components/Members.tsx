@@ -47,11 +47,11 @@ export default function Members() {
 
     return (
         <div>
-            <h3 className={`font-bold text-lg mb-4 font-anton text-center lg:text-left ${isDark ? 'text-gray-300' : 'text-[#292929]'}`}>
+            <h3 className={`font-bold text-lg mb-4 font-anton text-center ${isDark ? 'text-gray-300' : 'text-[#292929]'}`}>
                 STYRET
             </h3>
-            {/* Flex layout with wrapping - more mobile friendly */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 font-anton">
+            {/* Flex layout with wrapping - centered on all screen sizes */}
+            <div className="flex flex-wrap justify-center gap-4 font-anton">
                 {members.map((m) => (
                     <div key={m.id} className={`text-center flex flex-col items-center ${isDark ? 'text-gray-300' : 'text-[#292929]'}`}>
                         <div className={`rounded-full w-14 h-14 md:w-16 md:h-16 mb-2 overflow-hidden relative 
