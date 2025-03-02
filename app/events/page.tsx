@@ -11,35 +11,35 @@ export default function Events() {
   const events = [
     {
       title: "BULDRING MED RASTLOS",
-      date: "TIRSDAG 4. FEBRUAR KL. 09.00",
-      location: "HOS OSLO KLATRESENTER",
-      signupLink: "https://www.example.com/signup1",
+      date: "SØNDAG 3. MARS KL. 09.00",
+      location: "OSLO KLATRESENTER",
+      signupLink: "https://peoply.app/events/QWEHGQWP",
       image: "./buldring.png", 
-      description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
+      description: "Bli med på en spennende buldreøkt med IFI Rastløs! Alle nivåer er velkomne, og vi sørger for en morsom og inkluderende opplevelse. Utstyr kan lånes på stedet, bare møt opp med treningstøy og godt humør!", 
     },
     {
-      title: "RASTLOS GENERALFORSAMLING",
-      date: "TIRSDAG 11. FEBRUAR KL. 16.15",
-      location: "PÅ SEMINARROM C",
-      signupLink: "https://www.example.com/signup2",
-      image: "./genfors.png", 
-      description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
-    },
-    {
-      title: "BULDRING MED RASTLOS (2)", 
-      date: "ONSDAG 19. FEBRUAR KL. 14.00", 
-      location: "DRAMMEN KLATRESENTER", 
-      signupLink: "https://www.example.com/signup3",
+      title: "BULDRING MED RASTLOS",
+      date: "TIRSDAG 2. APRIL KL. 09.00",
+      location: "OSLO KLATRESENTER",
+      signupLink: "https://peoply.app/events/OMNCOGCD",
       image: "./buldring.png", 
-      description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
+      description: "En ny sjanse til å buldre med oss! Vårens beste klatreøkt med fokus på teknikk og moro. Klatresenteret har nettopp satt opp nye ruter, så dette blir spennende for både nybegynnere og erfarne!", 
     },
     {
-      title: "RASTLOS JULEBORD", 
-      date: "FREDAG 14. DESEMBER KL. 19.00", 
-      location: "RESTAURANT RASTLOS", 
-      signupLink: "https://www.example.com/signup4",
-      image: "./genfors.png",
-      description: "En ny sjanse til å buldre med oss! Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Kom og bli med!", // Example description
+      title: "BULDRING MED RASTLOS", 
+      date: "MANDAG 6. MAI KL. 09.00", 
+      location: "OSLO KLATRESENTER", 
+      signupLink: "https://peoply.app/events/QXZQMOFH",
+      image: "./buldring.png", 
+      description: "Mai-buldring med Rastløs! En perfekt pause fra eksamenslesingen. Vi har reservert en egen seksjon av senteret, så det blir god plass til alle. Etterpå samles vi for en hyggelig prat og forfriskninger.", 
+    },
+    {
+      title: "BULDRING MED RASTLOS", 
+      date: "TIRSDAG 4. JUNI KL. 09.00", 
+      location: "OSLO KLATRESENTER", 
+      signupLink: "https://peoply.app/events/UGVXUSEE",
+      image: "./buldring.png",
+      description: "Sommerens første buldreøkt! Avslutt semesteret med en fantastisk klatreopplevelse sammen med IFI Rastløs. Vi feirer at eksamenene er over med klatring, moro og kanskje noen forfriskninger etterpå.", 
     },
   ];
 
@@ -77,10 +77,17 @@ export default function Events() {
             </p>
   
             <div className="flex justify-between items-center py-2 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}">
-              <div className={`text-left ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+              <div className={`text-left flex items-center ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 text-buldreoransj" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
                 {event.location}
               </div>
-              <div className={`text-center ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+              <div className={`text-center flex items-center ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 text-buldreoransj" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
                 {event.date}
               </div>
               <div className="text-right">
