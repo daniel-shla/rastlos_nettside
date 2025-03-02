@@ -2,11 +2,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Anton } from "next/font/google";
 import "./globals.css";
+import "./mobile-enhancements.css"; // Add mobile enhancements
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import React from 'react';
 import Shortcuts from '@/components/Shortcuts'; // Import the wrapper
 import { ThemeProvider } from "@/components/ThemeContext";
+import BackToTop from "@/components/BackToTop"; // Import the BackToTop component
 
 
 const geistSans = Geist({
@@ -41,6 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Shortcuts /> {/* Shortcuts bar here */}
           <div className="flex-1">{children}</div>
           <Footer />
+          <BackToTop /> {/* Add the BackToTop component */}
         </ThemeProvider>
       </body>
     </html>

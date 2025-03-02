@@ -1,0 +1,76 @@
+/* Mobile Enhancements - Can be removed entirely if needed */
+
+/* Improved touch targets */
+@media (max-width: 768px) {
+  button, 
+  a.inline-block,
+  .nav-item {
+    padding: 0.75rem 1rem !important;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better typography for mobile */
+  p {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Increased spacing between paragraphs */
+  p + p {
+    margin-top: 1rem !important;
+  }
+  
+  /* Better form elements */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+    padding: 0.75rem !important;
+  }
+  
+  /* Add extra padding to containers */
+  .container, 
+  section, 
+  .md\:px-8 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  
+  /* Add a back to top button */
+  #back-to-top {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  #back-to-top.visible {
+    opacity: 1;
+  }
+  
+  /* Smoother scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+} 
