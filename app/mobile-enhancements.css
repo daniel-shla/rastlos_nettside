@@ -49,6 +49,27 @@
     padding-right: 1.25rem !important;
   }
   
+  /* Footer enhancements for mobile */
+  footer {
+    text-align: center;
+  }
+  
+  footer .text-xs {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Fix for the Members component in footer */
+  footer .grid-cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+  }
+  
+  /* Ensure member names don't overflow */
+  footer .truncate {
+    max-width: 100%;
+    display: block;
+  }
+  
   /* Add a back to top button */
   #back-to-top {
     display: flex;
