@@ -8,7 +8,7 @@ import { useTheme } from "./ThemeContext";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const { theme, toggleTheme, getThemedImage, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
 
   // Handle window resize to determine if we're on mobile
   useEffect(() => {

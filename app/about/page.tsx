@@ -1,13 +1,17 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import PageTemplate from '@/components/PageTemplate';
 import { useTheme } from '@/components/ThemeContext';
 import Link from 'next/link';
+import ImageWithLazyLoading from '@/components/ImageWithLazyLoading';
+import SwipeHandler from '@/components/SwipeHandler';
 
 const AboutPage = () => {
   const { isDark, isLight } = useTheme();
+  const [currentImagePage, setCurrentImagePage] = useState(0);
+  const imagesPerPage = 8; // Display 8 images per page on mobile
   
   // Sample activity images - replace with actual images
   const activityImages = [
@@ -48,6 +52,25 @@ const AboutPage = () => {
     }
   ];
   
+  // Calculate which images to show based on pagination
+  const displayedImages = adventureImages.slice(
+    currentImagePage * imagesPerPage, 
+    (currentImagePage + 1) * imagesPerPage
+  );
+
+  // Handle swipe navigation for image gallery
+  const handlePrevPage = () => {
+    if (currentImagePage > 0) {
+      setCurrentImagePage(currentImagePage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if ((currentImagePage + 1) * imagesPerPage < adventureImages.length) {
+      setCurrentImagePage(currentImagePage + 1);
+    }
+  };
+
   return (
     <PageTemplate
       title="OM RASTLØS"
@@ -57,7 +80,7 @@ const AboutPage = () => {
         {/* Main intro section with improved styling */}
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-1/2">
-            <Image 
+            <ImageWithLazyLoading 
               src="./omoss.png" 
               alt="About Us" 
               width={600} 
@@ -125,32 +148,56 @@ const AboutPage = () => {
               NYLIGE ARRANGEMENTER
             </h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
-            {adventureImages.map((imageName, index) => (
-              <div 
-                key={imageName} 
-                className={`relative rounded-lg overflow-hidden aspect-square 
-                  ${isDark 
-                    ? 'border border-gray-700' 
-                    : 'border border-[#292929]'} 
-                  transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.03] group`}
-              >
-                <Image
-                  src={`./${imageName}`}
-                  alt={`Adventure - ${imageName}`}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
-                  style={{ 
-                    objectFit: "cover",
-                    transition: "all 0.3s ease"
-                  }}
-                  className="group-hover:brightness-110"
-                  quality={85}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <p className="text-[#fef6da] p-3 font-bold font-anton"> </p>
+          <SwipeHandler 
+            onSwipeLeft={handleNextPage} 
+            onSwipeRight={handlePrevPage}
+            className="w-full"
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+              {displayedImages.map((imageName, index) => (
+                <div 
+                  key={imageName} 
+                  className={`relative rounded-lg overflow-hidden aspect-square 
+                    ${isDark 
+                      ? 'border border-gray-700' 
+                      : 'border border-[#292929]'} 
+                    transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.03] group`}
+                >
+                  <ImageWithLazyLoading
+                    src={imageName}
+                    alt={`Adventure - ${imageName}`}
+                    fill
+                    width={300}  
+                    height={300}
+                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                    style={{ 
+                      objectFit: "cover",
+                      transition: "all 0.3s ease"
+                    }}
+                    className="group-hover:brightness-110"
+                    quality={85}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <p className="text-[#fef6da] p-3 font-bold font-anton"> </p>
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
+          </SwipeHandler>
+          
+          {/* Page indicators for mobile */}
+          <div className="mt-4 flex justify-center gap-1">
+            {Array.from({ length: Math.ceil(adventureImages.length / imagesPerPage) }).map((_, i) => (
+              <button 
+                key={i}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  i === currentImagePage 
+                    ? 'bg-buldreoransj w-4' 
+                    : isDark ? 'bg-gray-600' : 'bg-gray-300'
+                }`}
+                onClick={() => setCurrentImagePage(i)}
+                aria-label={`Go to page ${i + 1}`}
+              />
             ))}
           </div>
           <div className="mt-6 flex justify-center">
