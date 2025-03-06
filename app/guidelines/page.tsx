@@ -22,13 +22,13 @@ const GuidelinesPage = () => {
           Det er mulig å kontakte alle styrets medlemmer om varslingssaker, som vil videreformidle varselet til studentkontakt eller nestleder. Det er også mulig å gjennom UiOs egen portal "Si fra!" (https://www.uio.no/om/hms/si-fra/).
         </p>
         <p className="text-lg leading-relaxed text-[#fef6da] mb-4">
-          Ved arrangementer kontaktes arrangementansvarlig eller et av styrets medlemmer som bringer det videre til studentkontakt eller nestleder. Studentkontakt eller nestleder avgjør om varslingen skal videreformidles til resten av styret eller UiO. Studentkontakt og nestleder skal tilstrebe anonymitet til de involverte.
+          Ved arrangementer kontaktes arrangementansvarlig eller et av styrets medlemmer som bringer det videre til leder eller nestleder. Studentkontakt eller nestleder avgjør om varslingen skal videreformidles til resten av styret eller UiO. Studentkontakt og nestleder skal tilstrebe anonymitet til de involverte.
         </p>
         <p className="text-lg leading-relaxed text-[#fef6da] mb-4">
           Ved brudd på retningslinjer kan dette føre til en advarsel, utestengelse fra våre arrangementer eller opphevelse av medlemskap i IFI-RASTLØS. HR-ansvarlig vil gjøre en vurdering av alvorlighetsgraden på bruddet, og vil dersom det anses nødvendig kunne ta dette opp med styret for å avgjøre konsekvensen. En eventuell utestengelse/ opphevelse av medlemskap skal avgjøres med styret hvor minst 2⁄3 av styrets deltagere må være for utestengelse/ opphevelse av medlemskap.
         </p>
         <p className="text-lg leading-relaxed text-[#fef6da] mb-4">
-          Sist oppdatert 15. mars 2023
+          Sist oppdatert 06. mars 2025
         </p>
       </div>
     </PageTemplate>
