@@ -285,21 +285,10 @@ const AboutPage = () => {
                 
                 <div className="md:w-1/2 flex flex-col items-center">
                   <div className="relative w-full max-w-xs aspect-square mb-4">
-                    <ImageWithLazyLoading
-                      src="./random3.jpg" 
-                      alt="Løpegruppe" 
-                      fill
-                      width={300}
-                      height={300}
-                      sizes="(max-width: 640px) 80vw, 300px"
-                      className="object-cover rounded-lg"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className={`p-3 rounded-full bg-white bg-opacity-90`}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-16 h-16" fill="#FC4C02">
-                          <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h3.064" />
-                        </svg>
-                      </div>
+                    <div className="w-full h-full rounded-lg bg-gradient-to-br from-[#FC4C02] to-[#FF7940] flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-32 h-32" fill="white">
+                        <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h3.064" />
+                      </svg>
                     </div>
                   </div>
                   
