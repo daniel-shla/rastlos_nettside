@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: "IFI Rastløs",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/lightlogo.png",
+        width: 800,
+        height: 800,
         alt: "IFI Rastløs Logo",
       }
     ],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "IFI Rastløs",
     description: "IFI Rastløs er en studentforening ved Institutt for Informatikk som arrangerer fysiske og sosiale aktiviteter for studenter.",
-    images: ["/og-image.jpg"],
+    images: ["/lightlogo.png"],
   },
 };
 
@@ -67,12 +67,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <head>
         {/* Explicit Open Graph meta tags for platforms that might ignore Next.js metadata */}
-        <meta property="og:image" content="https://ifirastlos.no/share.jpg" />
-        <meta property="og:image:secure_url" content="https://ifirastlos.no/share.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:image" content="https://ifirastlos.no/share.jpg" />
-        <meta name="image" content="https://ifirastlos.no/share.jpg" />
+        <meta property="og:image" content="https://ifirastlos.no/lightlogo.png" />
+        <meta property="og:image:secure_url" content="https://ifirastlos.no/lightlogo.png" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta name="twitter:image" content="https://ifirastlos.no/lightlogo.png" />
+        <meta name="image" content="https://ifirastlos.no/lightlogo.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} antialiased min-h-dvh flex flex-col`}
