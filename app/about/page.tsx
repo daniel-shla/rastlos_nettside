@@ -238,6 +238,20 @@ const AboutPage = () => {
                 </a>
               ))}
             </div>
+
+            <div className="flex justify-center mb-6">
+              <div className="w-full max-w-3xl overflow-hidden rounded-lg">
+                <iframe 
+                  src="https://www.instagram.com/ifirastlos/embed" 
+                  width="100%" 
+                  height="450" 
+                  frameBorder="0" 
+                  scrolling="no" 
+                  allowTransparency={true}
+                  className={`${isDark ? 'filter invert-[.15]' : ''}`}
+                ></iframe>
+              </div>
+            </div>
             
             <div className="mt-6 flex justify-center">
               <a 
