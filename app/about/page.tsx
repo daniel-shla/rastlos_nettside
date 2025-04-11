@@ -197,7 +197,7 @@ const AboutPage = () => {
           </div>
           
           <div className={`p-6 rounded-lg ${isDark ? 'bg-[#333333]' : 'bg-[#f7f3e8]'} shadow-lg mb-8`}>
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-6">
               <div className="mr-3 text-buldreoransj">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
@@ -209,38 +209,8 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {adventureImages.slice(0, 6).map((imageName, index) => (
-                <a 
-                  key={imageName}
-                  href="https://www.instagram.com/ifirastlos/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block relative aspect-square rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-[1.03] hover:shadow-md"
-                >
-                  <ImageWithLazyLoading 
-                    src={imageName} 
-                    alt="Instagram post" 
-                    fill
-                    width={300}
-                    height={300}
-                    sizes="(max-width: 640px) 50vw, 30vw"
-                    className="object-cover"
-                    style={{ 
-                      filter: isDark ? "none" : "brightness(1.05)"
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
-                    <div className="p-2 w-full text-center">
-                      <span className="text-white text-sm">Se mer på Instagram</span>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            <div className="flex justify-center">
-              <div className="w-full max-w-2xl overflow-hidden rounded-lg bg-white my-8">
+            <div className="flex justify-center mb-6">
+              <div className="w-full max-w-2xl overflow-hidden rounded-lg bg-white">
                 <iframe 
                   src="https://www.instagram.com/ifirastlos/embed" 
                   width="100%" 
