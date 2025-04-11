@@ -65,6 +65,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <head>
+        {/* Explicit Open Graph meta tags for platforms that might ignore Next.js metadata */}
+        <meta property="og:image" content="https://ifirastlos.no/share.jpg" />
+        <meta property="og:image:secure_url" content="https://ifirastlos.no/share.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://ifirastlos.no/share.jpg" />
+        <meta name="image" content="https://ifirastlos.no/share.jpg" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anton.variable} antialiased min-h-dvh flex flex-col`}
       >
