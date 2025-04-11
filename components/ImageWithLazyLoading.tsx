@@ -6,8 +6,8 @@ import Image from 'next/image';
 interface ImageWithLazyLoadingProps {
   src: string;
   alt: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   className?: string;
   fill?: boolean;
   priority?: boolean;
@@ -31,6 +31,11 @@ const ImageWithLazyLoading = ({
   const [isLoading, setIsLoading] = useState(true);
   const [isInView, setIsInView] = useState(false);
   const [showImage, setShowImage] = useState(priority);
+
+  // Validate props
+  if (!fill && (width === undefined || height === undefined)) {
+    console.error('ImageWithLazyLoading: width and height props are required when fill is false');
+  }
 
   useEffect(() => {
     // Only set up IntersectionObserver if the image is not a priority image

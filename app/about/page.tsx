@@ -222,6 +222,8 @@ const AboutPage = () => {
                     src={imageName} 
                     alt="Instagram post" 
                     fill
+                    width={300}
+                    height={300}
                     sizes="(max-width: 640px) 50vw, 30vw"
                     className="object-cover"
                     style={{ 
@@ -294,6 +296,8 @@ const AboutPage = () => {
                     src="./random3.jpg" 
                     alt="Løpegruppe" 
                     fill
+                    width={300}
+                    height={300}
                     sizes="(max-width: 640px) 80vw, 300px"
                     className="object-cover rounded-lg"
                   />
