@@ -40,7 +40,7 @@ This project uses next/font
 to automatically optimize and load Geist
 
 
-☁️ Deployment
+## ☁️ Deployment
 
 The site is deployed on Vercel, the recommended platform for Next.js projects.
 
