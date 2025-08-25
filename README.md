@@ -1,8 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IFI Rastløs  
 
-## Getting Started
+A student association at the University of Oslo (UiO) that organizes social and physical activities for informatics students.  
 
-First, run the development server:
+---
+
+## 🌱 About  
+We aim to bring students together outside of studies through hiking, climbing, running, and other fun activities. Everyone is welcome, no matter your experience level.  
+
+---
+
+## 🌐 Website  
+This repository contains the code for [ifirastlos.no](https://ifirastlos.no), a website I created using [Next.js](https://nextjs.org) to support and promote the student organization.  
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).  
+
+---
+
+## 🚀 Getting Started  
+
+Run the development server:  
 
 ```bash
 npm run dev
@@ -14,19 +30,29 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 
-## Learn More
+This project uses next/font
+to automatically optimize and load Geist
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+☁️ Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The site is deployed on Vercel, the recommended platform for Next.js projects.
+
+-Pushes to the main branch automatically trigger a new build
+-Preview deployments are created for each pull request
+-Live site: ifirastlos.no
+
+To deploy your own version:
+
+    Fork this repository
+    Import into Vercel
+    Follow the setup instructions
+
 
 
